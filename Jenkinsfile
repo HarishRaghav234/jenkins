@@ -24,14 +24,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building project..."
-                sh 'python3 build.py'
+                sh 'python3 test.py'
             }
         }
 
         stage('Test') {
             steps {
                 echo "Running tests..."
-                sh 'pytest || true'
+
             }
         }
     }
