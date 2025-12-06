@@ -17,7 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing dependencies..."
-                sh 'apt update -y && apt install python3 -y || true'
+               
             }
         }
 
