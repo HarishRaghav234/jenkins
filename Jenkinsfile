@@ -17,7 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing dependencies..."
-                sh 'apt install python3 -y || true'
+                sh 'apt update -y && apt install python3 -y || true'
             }
         }
 
@@ -33,9 +33,10 @@ pipeline {
                 echo "Running tests..."
                 sh 'pytest || true'
             }
-              }
+        }
+    }
 
-           post {
+    post {
         success {
             echo "Pipeline finished successfully!"
         }
